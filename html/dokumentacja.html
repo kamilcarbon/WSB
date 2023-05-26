@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aplikacja Medyczna</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo aplikacji">
+    <nav>
+      <ul>
+        <li><a href="pacjenci.html" class="tab-link">Pacjenci</a></li>
+        <li><a href="harmonogram.html" class="tab-link">Harmonogram</a></li>
+        <li><a href="dokumentacja.html" class="tab-link">Dokumentacja</a></li>
+        <li><a href="raporty.html" class="tab-link">Raporty</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content" id="content">
+    <h1>Dokumentacja</h1>
+		<form>
+		  <label for="imie">Imię:</label>
+		  <input type="text" id="imie" name="imie" required><br>
+
+		  <label for="nazwisko">Nazwisko:</label>
+		  <input type="text" id="nazwisko" name="nazwisko" required><br>
+
+		  <label for="notatki">Notatki:</label>
+		  <textarea id="notatki" name="notatki"></textarea><br>
+
+		  <input type="submit" value="Dodaj dokument">
+		</form>
+  </div>
+
+  <footer>
+    &copy; 2023 Aplikacja Medyczna. Wszelkie prawa zastrzeżone.
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+
