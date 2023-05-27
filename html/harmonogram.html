@@ -18,14 +18,45 @@
   </header>
 
   <div class="content" id="content">
-	<h1>Harmonogram</h1>
-		<ul>
-		  <li>9:00 - Wizyta u lekarza</li>
-		  <li>10:30 - Badanie laboratoryjne</li>
-		  <li>14:00 - Konsultacja specjalistyczna</li>
-		</ul>
-</div>
+      <h1>Harmonogram</h1>
 
+  <h2>Wprowadź dane harmonogramu</h2>
+  <form id="harmonogram-form">
+    <label for="harmonogram-data">Dane harmonogramu:</label>
+    <textarea id="harmonogram-data" name="harmonogramData" rows="5" cols="40"></textarea>
+    <br>
+    <button type="submit">Zapisz harmonogram</button>
+  </form>
+
+  <h2>Harmonogram</h2>
+  12:30 - Spacer <br>
+  13:00 - Operacja Jan Kowalski <br>
+  14:00 - Szczepienia <br>
+  <div id="harmonogram-content"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const harmonogramForm = document.getElementById("harmonogram-form");
+      const harmonogramDataInput = document.getElementById("harmonogram-data");
+      const harmonogramContent = document.getElementById("harmonogram-content");
+
+      // Pobranie harmonogramu
+      const storedHarmonogram = localStorage.getItem("harmonogram");
+      if (storedHarmonogram) {
+        harmonogramContent.textContent = storedHarmonogram;
+      }
+
+      // Zapisanie harmonogramu
+      harmonogramForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const harmonogramData = harmonogramDataInput.value;
+
+        localStorage.setItem("harmonogram", harmonogramData);
+        harmonogramContent.textContent = harmonogramData;
+        alert("Zapisano harmonogram");
+      });
+    });
+  </script>
   </div>
 
   <footer>
@@ -36,4 +67,3 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
-
